@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsAjax</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+  <ul>
+    <li> <h2> Rails - Ajax </h2> </li>
+    <li> <%= link_to "Produtos", produtos_path %></li>
+    <li> <%= link_to "Grupos de Produtos", grupos_path %></li>
+  </ul>
+</nav>
+
+  <%= yield %>
+
+  </body>
+</html>

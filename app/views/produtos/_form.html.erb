@@ -1,0 +1,30 @@
+<%= simple_form_for(@produto, { }) do |f| %>
+  <% if @produto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+      <% @produto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.association :grupo, label_method: :descricao %>
+  </div>
+  <div class="field">
+    <%= f.input :codigo, readonly: true %>
+  </div>
+  <div class="field">
+    <%= f.input :descricao %>
+  </div>
+  <div class="field">
+    <%= f.input :preco %>
+  </div>
+  <div class="field">
+    <%= f.submit class:"button" %>
+  </div>
+
+<% end %>
